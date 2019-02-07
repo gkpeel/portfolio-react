@@ -1,5 +1,5 @@
-import React from "react";
-import Headshot from "../../img/transparent-headshot-portfolio-800h.png";
+import React from "react"
+import Headshot from "../../img/transparent-headshot-portfolio-800h.png"
 import Button from "../Button"
 
 const cmy_hex_array = [
@@ -16,7 +16,7 @@ const randColor = selectRandColor(cmy_hex_array);
 
 const style = {
     jumbotron: {
-        height: "100vh",
+        height: "calc(100vh - 138px)",
         position: "relative"
     },
     jumbotronFullBottom: {

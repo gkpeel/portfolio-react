@@ -4,7 +4,7 @@ import FeaturedWork from "../../components/FeaturedWork"
 
 const Home = () => {
     return (
-        <div>
+        <div className="page">
             <Jumbotron />
             <FeaturedWork />
         </div>

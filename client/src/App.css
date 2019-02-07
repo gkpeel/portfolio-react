@@ -1,6 +1,39 @@
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: 'Open Sans', sans-serif;
+}
+
 .App {
 }
 
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Open Sans', sans-serif;
+.page {
+    position: absolute;
+    top: 138px;
+    left: 0;
+    right: 0;
+}
+
+
+/* simple - enter transition 300ms, exit 150ms */
+.fade-appear,
+.fade-enter {
+    opacity: 0;
+    z-index: 1;
+    transform: translateY(10px);
+}
+.fade-appear-active,
+.fade-enter.fade-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 300ms linear 150ms, transform 300ms ease-out 150ms;
+}
+
+.fade-exit {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-exit.fade-exit-active {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 150ms linear, transform 150ms ease-in;
 }
