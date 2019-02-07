@@ -11,9 +11,9 @@ const style = {
 
 const Navigation = () => {
     return (
-        <nav className="navbar navbar-expand-md">
+        <nav className="navbar fixed-top navbar-expand-md">
             <div className="">
-                <a className="navbar-brand" href="#top">
+                <a className="navbar-brand" href="/">
                     <img src={Logo} alt="Geoff Peel Portfolio Logo" style={style.navigation__logo} />
                 </a>
             </div>
@@ -21,8 +21,8 @@ const Navigation = () => {
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="portfolioNav">
-                <div className="navbar-nav">
-                    <a href="#about" className="nav-item nav-link">About</a>
+                <div className="navbar-nav ml-auto">
+                    <a href="/about" className="nav-item nav-link">About</a>
                     <a href="/projects" className="nav-item nav-link">Projects</a>
                     <a href="/resume" className="nav-item nav-link disabled">Resume</a>
                     <a href="/blog" className="nav-item nav-link disabled">Blog</a>
