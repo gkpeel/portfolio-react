@@ -1,8 +1,9 @@
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p, li, a {
     font-family: 'Open Sans', sans-serif;
 }
 
-.App {
+.font--marker{
+    font-family: 'Permanent Marker', sans-serif;
 }
 
 .page {
@@ -11,7 +12,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     left: 0;
     right: 0;
 }
-
 
 /* simple - enter transition 300ms, exit 150ms */
 .fade-appear,

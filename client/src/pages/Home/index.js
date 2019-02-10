@@ -1,11 +1,12 @@
 import React from "react"
-import Jumbotron from "../../components/Jumbotron"
+import Intro from "../../components/Intro"
 import FeaturedWork from "../../components/FeaturedWork"
+import "./index.css"
 
 const Home = () => {
     return (
         <div className="page">
-            <Jumbotron />
+            <Intro />
             <FeaturedWork />
         </div>
     )
