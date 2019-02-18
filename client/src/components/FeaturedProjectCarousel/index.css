@@ -1,0 +1,8 @@
+.carousel {
+    display: flex;
+    justify-content: center;
+}
+
+.thumbs.animated {
+    padding-left: 0;
+}

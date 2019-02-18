@@ -41,7 +41,7 @@ const IntroHeader = styled.h1`
 `
 
 const IntroSubHeader = styled.h1`
-    margin-bottom: 2rem;
+    margin-bottom: 12%;
     @media(min-width: 1200px) {
         font-size: 3rem;
     }

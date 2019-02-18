@@ -7,20 +7,25 @@ import FeaturedProjectCarousel from "../FeaturedProjectCarousel"
 class FeaturedWork extends Component {
 
     state = {
-        carouselImg: null
+        currentSlideIndex: 0
     }
 
-    componentDidMount() {
-        this.setState({ carouselImg: null })
+    setCurrentSlideIndex = (carouselSlideIndex) => {
+        console.log(carouselSlideIndex)
+        this.setState({ currentSlideIndex: carouselSlideIndex })
     }
-
 
     render() {
         return (
             <Section id="featured-work">
                 <Row>
-                    <FeaturedProjectInfo />
-                    <FeaturedProjectCarousel />
+                    <FeaturedProjectInfo
+                        currentSlideIndex={this.state.currentSlideIndex}
+                    />
+                    <FeaturedProjectCarousel
+                        currentSlideIndex={this.state.currentSlideIndex}
+                        setCurrentSlideIndex={this.setCurrentSlideIndex}
+                    />
                 </Row>
             </Section>
         )

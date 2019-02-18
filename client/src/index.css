@@ -3,5 +3,6 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
+  background: url(./img/what-the-hex-dark.png) repeat;
   background-color: rgb(20,20,25);
 }
