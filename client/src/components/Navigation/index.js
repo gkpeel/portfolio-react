@@ -1,8 +1,32 @@
-import React, { Component } from "react";
+import React, { Component } from "react"
 import { NavLink } from "react-router-dom"
-import { Navbar, Nav } from "react-bootstrap";
-import Logo from "../../img/portfolio-logo.svg";
-import "./index.css"
+import { Navbar, Container, Nav } from "react-bootstrap"
+import Logo from "../../img/portfolio-logo.svg"
+import styled from "styled-components"
+
+const PortfolioNavLink = styled(NavLink)`
+    font-size: 1.25rem;
+    font-family: "Permanent Marker", sans-serif;
+    color: #ffffff;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+
+    &:last-of-type {
+        padding-right: 0;
+    }
+
+    &:hover, &.active {
+        color: #00FFFF;
+    }
+
+    &.active {
+        text-decoration: underline;
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+`
 
 class Navigation extends Component {
 
@@ -29,29 +53,32 @@ class Navigation extends Component {
                 onToggle={this.toggleNavExpanded}
                 expanded={this.state.navExpanded}
             >
-                <Navbar.Brand>
-                    <NavLink
-                        exact to="/"
-                        className="navbar-brand"
-                        onClick={this.closeNav}
-                    >
-                        <img
-                            src={Logo}
-                            alt="Geoff Peel Portfolio Logo"
-                            className="navigation__logo"
-                        />
-                    </NavLink>
-                </Navbar.Brand>
-                <Navbar.Toggle />
-                <Navbar.Collapse>
-                    <Nav className="ml-auto">
-                        <NavLink to="/about" className="nav-item nav-link" onClick={this.closeNav}>About</NavLink>
-                        <NavLink to="/projects" className="nav-item nav-link" onClick={this.closeNav}>Projects</NavLink>
-                        <NavLink to="/resume" className="nav-item nav-link disabled" onClick={this.closeNav}>Resume</NavLink>
-                        <NavLink to="/blog" className="nav-item nav-link disabled" onClick={this.closeNav}>Blog</NavLink>
-                        <NavLink to="/contact" className="nav-item nav-link" onClick={this.closeNav}>Contact</NavLink>
-                    </Nav>
-                </Navbar.Collapse>
+                <Container fluid>
+                    <Navbar.Brand>
+                        <NavLink
+                            exact to="/"
+                            className="navbar-brand"
+                            onClick={this.closeNav}
+                        >
+                            <img
+                                src={Logo}
+                                alt="Geoff Peel Portfolio Logo"
+                                width="112px"
+                                height="112px"
+                            />
+                        </NavLink>
+                    </Navbar.Brand>
+                    <Navbar.Toggle />
+                    <Navbar.Collapse>
+                        <Nav className="ml-auto">
+                            <PortfolioNavLink to="/about" onClick={this.closeNav}>About</PortfolioNavLink>
+                            <PortfolioNavLink to="/projects" onClick={this.closeNav}>Projects</PortfolioNavLink>
+                            <PortfolioNavLink to="/resume" className="nav-item disabled" onClick={this.closeNav}>Resume</PortfolioNavLink>
+                            <PortfolioNavLink to="/blog" className="nav-item disabled" onClick={this.closeNav}>Blog</PortfolioNavLink>
+                            <PortfolioNavLink to="/contact" onClick={this.closeNav}>Contact</PortfolioNavLink>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
             </Navbar>
         )
     }

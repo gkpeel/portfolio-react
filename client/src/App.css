@@ -1,3 +1,4 @@
+/* add Google Fonts to elements */
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p, li, a {
     font-family: 'Open Sans', sans-serif;
 }
@@ -6,14 +7,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p, li, a {
     font-family: 'Permanent Marker', sans-serif;
 }
 
-.page {
-    position: absolute;
-    top: 138px;
-    left: 0;
-    right: 0;
-}
-
-/* simple - enter transition 300ms, exit 150ms */
+/* simple page transitions - enter transition 300ms, exit 150ms */
 .fade-appear,
 .fade-enter {
     opacity: 0;
