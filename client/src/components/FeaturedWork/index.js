@@ -1,38 +1,30 @@
-import React from "react"
-import { Container, Row, Col } from "react-bootstrap"
-import { Carousel } from "react-responsive-carousel"
-import BegsList from "../../img/projects/begs-list-screenshot.png"
-import "react-responsive-carousel/lib/styles/carousel.min.css"
+import React, { Component } from "react"
+import { Row } from "react-bootstrap"
+import Section from "../Section"
+import FeaturedProjectInfo from "../FeaturedProjectInfo"
+import FeaturedProjectCarousel from "../FeaturedProjectCarousel"
 
-const style = {
-    section: {
-        marginTop: "5rem",
-        marginBotton: "5rem"
-    },
-    col: {
-        padding: "0 16px"
+class FeaturedWork extends Component {
+
+    state = {
+        carouselImg: null
     }
-}
 
-const FeaturedWork = () => {
-    return (
-        <section style={style.section}>
-            <Row>
-                <Container fluid>
-                    <Carousel>
-                        <div>
-                            <img src="../../img/projects/begs-list-screenshot.png" alt="Beg's List Project Screengrab" />
-                            <h1>Hello World</h1>
-                        </div>
-                        <div>
-                            <img src={BegsList} alt="Beg's List Project Screenshot" />
-                            <h1>Hello Universe</h1>
-                        </div>
-                    </Carousel>
-                </Container>
-            </Row>
-        </section>
-    )
+    componentDidMount() {
+        this.setState({ carouselImg: null })
+    }
+
+
+    render() {
+        return (
+            <Section id="featured-work">
+                <Row>
+                    <FeaturedProjectInfo />
+                    <FeaturedProjectCarousel />
+                </Row>
+            </Section>
+        )
+    }
 }
 
 export default FeaturedWork

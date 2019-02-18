@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Jumbotron, Container, Row, Col, Button } from 'react-bootstrap'
 import Headshot from "../../img/transparent-headshot-portfolio-800h.png"
-import CTAButton from "../CTAButton"
+import CtaButton from "../CTAButton"
 
 const cmy_hex_array = [
     "#00FFFF",
@@ -50,7 +50,7 @@ const Intro = () => {
     return (
         <IntroJumbotron fluid>
             <IntroContainer fluid>
-                <IntroRow>
+                <IntroRow className="">
                     <Col
                         xs={{ span: 12, order: 2 }}
                         md={{ span: 6, order: 1 }}
@@ -72,7 +72,7 @@ const Intro = () => {
                                     <IntroHeader>Hi, I’m <span className="font--marker">Geoffrey Peel</span>.</IntroHeader>
                                     <IntroSubHeader>Full-Stack Web Developer</IntroSubHeader>
                                 </div>
-                                <CTAButton to="#featured-work">See My Work</CTAButton>
+                                <CtaButton to="featured-work">See My Work</CtaButton>
                             </div>
                         </div>
                     </Col>
