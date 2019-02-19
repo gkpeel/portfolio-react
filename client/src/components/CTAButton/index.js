@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap"
 import styled from "styled-components"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const CTA_Link = styled(Link)`
+const CtaLink = styled(Link)`
     display: inline-block;
     width: 100%;
     margin-bottom: 1rem;
@@ -59,7 +59,7 @@ const CTA_Link = styled(Link)`
 
 const CtaButton = (props) => {
     return (
-        <CTA_Link
+        <CtaLink
             activeClass="active"
             to={props.to}
             spy={true}
@@ -68,7 +68,7 @@ const CtaButton = (props) => {
             duration={500}
         >
             {props.children} <FontAwesomeIcon className="cta-arrow" icon="angle-double-right" />
-        </CTA_Link>
+        </CtaLink>
     )
 }
 

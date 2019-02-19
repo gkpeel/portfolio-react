@@ -42,6 +42,7 @@ const PortfolioContainer = styled(Container)`
 `
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">

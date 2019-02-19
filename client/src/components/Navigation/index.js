@@ -36,7 +36,33 @@ const PortfolioNavLink = styled(NavLink)`
 class Navigation extends Component {
 
     state = {
+        opacity: 0,
         navExpanded: false
+    }
+
+    componentDidMount() {
+        document.addEventListener('scroll', () => {
+            this.navOpacity();
+        })
+    }
+
+    navOpacity = () => {
+        const range = 150
+        let scrollTop = window.scrollY
+        const navHeight = document.getElementById('navbar').clientHeight
+        const offset = navHeight / 2
+        let calc = ((scrollTop - offset + range) / range) - 1
+        let opacity = null
+
+        if (calc < 0) {
+            opacity = 0
+        } else if (calc > 0.7) {
+            opacity = 0.7
+        } else {
+            opacity = calc
+        }
+
+        this.setState({ opacity: opacity })
     }
 
     toggleNavExpanded = () => {
@@ -52,11 +78,13 @@ class Navigation extends Component {
         return (
             <Navbar
                 expand="md"
-                bg="background-black"
+                bg={this.state.isTop ? "background-black" : "background-black active"}
                 fixed="top"
                 variant="dark"
                 onToggle={this.toggleNavExpanded}
                 expanded={this.state.navExpanded}
+                id="navbar"
+                style={{ backgroundColor: "rgba(20,20,25, " + this.state.opacity + ")" }}
             >
                 <Container fluid>
                     <Navbar.Brand>

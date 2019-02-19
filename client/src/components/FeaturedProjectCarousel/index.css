@@ -6,3 +6,11 @@
 .thumbs.animated {
     padding-left: 0;
 }
+
+.carousel .thumb {
+    border-color: #333;
+}
+
+.carousel .thumb.selected {
+    border-color: #fff;
+}
