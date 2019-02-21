@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import { Jumbotron, Container, Row, Col, Button } from 'react-bootstrap'
+import { Jumbotron, Container, Row, Col } from 'react-bootstrap'
 import Headshot from "../../img/transparent-headshot-portfolio-800h.png"
-import CtaButton from "../CTAButton"
+import CtaAnchor from "../../components/CtaAnchor"
 
 const cmy_hex_array = [
     "#00FFFF",
@@ -16,8 +16,10 @@ const randColor = selectRandColor(cmy_hex_array);
 
 const IntroJumbotron = styled(Jumbotron)`    
     background-color: transparent;
-    height: calc(100vh - 138px);
     padding-bottom: 0;
+    @media(min-width:768px) {
+        height: calc(100vh - 138px);
+    }
 `
 const IntroContainer = styled(Container)`
     height: 100%;
@@ -41,16 +43,16 @@ const IntroHeader = styled.h1`
 `
 
 const IntroSubHeader = styled.h1`
-    margin-bottom: 12%;
     @media(min-width: 1200px) {
         font-size: 3rem;
     }
 `
+
 const Intro = () => {
     return (
         <IntroJumbotron fluid>
             <IntroContainer fluid>
-                <IntroRow className="">
+                <IntroRow>
                     <Col
                         xs={{ span: 12, order: 2 }}
                         md={{ span: 6, order: 1 }}
@@ -68,11 +70,11 @@ const Intro = () => {
                     >
                         <div className="d-flex align-items-center h-100 text-right text-white">
                             <div className="w-100">
-                                <div>
+                                <div style={{ marginBottom: "12%" }}>
                                     <IntroHeader>Hi, I’m <span className="font--marker">Geoffrey Peel</span>.</IntroHeader>
                                     <IntroSubHeader>Full-Stack Web Developer</IntroSubHeader>
                                 </div>
-                                <CtaButton to="featured-work">See My Work</CtaButton>
+                                <CtaAnchor to="featured-work" icon="angle-double-right" align="left">See My Work</CtaAnchor>
                             </div>
                         </div>
                     </Col>

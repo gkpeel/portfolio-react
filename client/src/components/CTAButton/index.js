@@ -1,13 +1,13 @@
 import React from "react"
-import { Link, animateScroll as scroll } from "react-scroll"
-import { Button } from "react-bootstrap"
+import { NavLink } from "react-router-dom"
 import styled from "styled-components"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const CtaLink = styled(Link)`
+const StyleNavLink = styled(NavLink)`
     display: inline-block;
     width: 100%;
     margin-bottom: 1rem;
+    margin-top: 1.5rem;
     border-color: #00FFFF;
     border: 1px solid transparent;
     border-radius: .25rem;
@@ -25,12 +25,14 @@ const CtaLink = styled(Link)`
     -ms-user-select: none;
     user-select: none;
     line-height: 1.5;
+    cursor: pointer;
     transition: color .15s ease-in-out,
-                background-color .15s ease-in-out,
-                border-color .15s ease-in-out,
-                box-shadow .15s ease-in-out;
+                background-color 300ms ease-in-out,
+                border-color 300ms ease-in-out,
+                box-shadow 300ms ease-in-out;
 
-    & .cta-arrow {
+    & .cta-icon {
+        margin-left: 0.5rem;
         transition: transform 300ms ease-out;
     }
 
@@ -40,35 +42,26 @@ const CtaLink = styled(Link)`
         border-color: rgba(0, 255, 255, 0.2);
         text-decoration: none;
 
-        & .cta-arrow {
-            transform: rotate(90deg);
+        & .cta-icon {
+            transform: scale(1.15);
         }
     }
 
     @media(min-width:991px) {
-        width: 66%;
         padding: 0.5rem 1rem;
         font-size: 2rem;
     }
 
     @media(min-width: 1280px) {
-        width: 50%;
         padding: 0.5rem 1rem;
     }
 `
 
 const CtaButton = (props) => {
     return (
-        <CtaLink
-            activeClass="active"
-            to={props.to}
-            spy={true}
-            smooth={true}
-            offset={-150}
-            duration={500}
-        >
-            {props.children} <FontAwesomeIcon className="cta-arrow" icon="angle-double-right" />
-        </CtaLink>
+        <div className="mt-auto">
+            <StyleNavLink to={props.to}>{props.children} <FontAwesomeIcon className="cta-icon" icon={props.icon} /></StyleNavLink>
+        </div>
     )
 }
 

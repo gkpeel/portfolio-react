@@ -2,11 +2,17 @@ import React from "react"
 import { Row, Col } from "react-bootstrap"
 import styled from "styled-components"
 import { MongoDB, Express, ReactJS, NodeLogo, WordPress, HTML, CSSLogo, JavascriptLogo, SASS, Bootstrap, jQuery, Java, PHP, Python, Heroku, MySQL, GoogleMaps, Git, XD, Photoshop, Illustrator, Premiere } from "../../util/logos.js"
+import ContentSubHeader from "../ContentSubHeader/index.js";
+import ContentHeader from "../ContentHeader/index.js";
 
 const SkillsRow = styled(Row)`
     margin-bottom: 1.5rem;
     border-bottom: 2px solid #333;
     padding-bottom: 1.5rem;
+
+    [class*=' col-']:nth-child(-n+5) {
+        margin-bottom: 1.25rem;
+    }
 
     &:last-of-type {
         border-bottom: none;
@@ -26,10 +32,10 @@ const SkillsLogo = styled.img`
 const SkillsGrid = (props) => {
     return (
         <Col md={{ span: 5, offset: 1 }} >
-            <h1>Skills</h1>
+            <ContentHeader>Skills</ContentHeader>
             <SkillsRow>
                 <Col xs={12}>
-                    <h3>MERN Stack</h3>
+                    <ContentSubHeader>MERN Stack</ContentSubHeader>
                 </Col>
                 <Col xs={3} className="d-flex">
                     <SkillsLogo src={MongoDB} alt="MongoDB Logo" className="img-fluid" />
@@ -46,7 +52,7 @@ const SkillsGrid = (props) => {
             </SkillsRow>
             <SkillsRow>
                 <Col xs={12}>
-                    <h3>CSS</h3>
+                    <ContentSubHeader>CSS</ContentSubHeader>
                 </Col>
                 <Col xs={3} className="d-flex">
                     <SkillsLogo src={CSSLogo} alt="CSS 3 Logo" className="img-fluid" />
@@ -60,7 +66,7 @@ const SkillsGrid = (props) => {
             </SkillsRow>
             <SkillsRow>
                 <Col xs={12}>
-                    <h3>JS</h3>
+                    <ContentSubHeader>JS</ContentSubHeader>
                 </Col>
                 <Col xs={3} className="d-flex">
                     <SkillsLogo src={JavascriptLogo} alt="Javascript Logo" className="img-fluid" />
@@ -71,7 +77,7 @@ const SkillsGrid = (props) => {
             </SkillsRow>
             <SkillsRow>
                 <Col xs={12}>
-                    <h3>Other</h3>
+                    <ContentSubHeader>Other</ContentSubHeader>
                 </Col>
                 <Col xs={3} className="d-flex">
                     <SkillsLogo src={HTML} alt="HTML 5 Logo" className="img-fluid" />
@@ -94,7 +100,7 @@ const SkillsGrid = (props) => {
             </SkillsRow>
             <SkillsRow>
                 <Col xs={12}>
-                    <h3>Languages</h3>
+                    <ContentSubHeader>Languages</ContentSubHeader>
                 </Col>
                 <Col xs={3} className="d-flex">
                     <SkillsLogo src={Java} alt="Java Logo" className="img-fluid" />
@@ -108,7 +114,7 @@ const SkillsGrid = (props) => {
             </SkillsRow>
             <SkillsRow>
                 <Col xs={12}>
-                    <h3>Design</h3>
+                    <ContentSubHeader>Design</ContentSubHeader>
                 </Col>
                 <Col xs={3} className="d-flex">
                     <SkillsLogo src={XD} alt="Adobe XD Logo" className="img-fluid" />

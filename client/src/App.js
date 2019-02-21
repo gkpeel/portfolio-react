@@ -14,19 +14,21 @@ import "./App.css"
 
 // import FontAwesome Library/build Library
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDoubleRight, faCode, faEye, faUserCircle } from '@fortawesome/free-solid-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
 
 // import Navigation and Pages
 import Navigation from "./components/Navigation"
 import Home from "./pages/Home"
 import About from "./pages/About"
 import Projects from "./pages/Projects"
+import Resume from "./pages/Resume"
+import Blog from "./pages/Blog"
 import Contact from "./pages/Contact"
 import NoMatch from "./pages/NoMatch"
 import "./App.css"
 
-library.add(faAngleDoubleRight)
+library.add(faAngleDoubleRight, faCode, fab, faEye, faUserCircle)
 
 const Page = styled.div`
   position: absolute;
@@ -37,8 +39,10 @@ const Page = styled.div`
 `
 const PortfolioContainer = styled(Container)`
   max-width: 1920px;
-  padding-left: 32px;
-  padding-right: 32px;
+  @media(min-width:576px) {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
 `
 
 class App extends Component {
@@ -60,6 +64,8 @@ class App extends Component {
                     <Route exact path="/" component={Home} />
                     <Route path="/about" component={About} />
                     <Route path="/projects" component={Projects} />
+                    <Route path="/resume" component={Resume} />
+                    <Route path="/blog" component={Blog} />
                     <Route path="/contact" component={Contact} />
                     <Route component={NoMatch} />
                   </Switch>

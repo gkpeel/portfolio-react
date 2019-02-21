@@ -29,10 +29,15 @@ class FeaturedProjectCarousel extends Component {
     render() {
         return (
             <Col
-                xs={12}
-                md={6}
+                xs={{ span: 12, order: 1 }}
+                md={{ span: 6, order: 2 }}
             >
                 <Carousel
+                    infiniteLoop
+                    useKeyboardArrows
+                    emulateTouch
+                    showStatus={false}
+                    showIndicators={false}
                     selectedItem={this.props.currentSlideIndex}
                     onChange={(newIndex) => {
                         this.props.setCurrentSlideIndex(newIndex)

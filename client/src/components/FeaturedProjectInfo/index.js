@@ -1,10 +1,8 @@
 import React, { Component } from "react"
-import { NavLink } from "react-router-dom"
 import { Col } from "react-bootstrap"
-import styled from "styled-components"
 import Slides from "../../util/slides.js"
 import ContentBox from "../ContentBox"
-import CtaButton from "../CTAButton"
+import CtaButton from "../CtaButton"
 
 class FeaturedProjectInfo extends Component {
     state = {
@@ -19,18 +17,17 @@ class FeaturedProjectInfo extends Component {
     render() {
         return (
             <Col
-                xs={12}
-                md={true}
+                xs={{ span: 12, order: 2 }}
+                md={{ span: 6, order: 1 }}
             >
                 <ContentBox>
                     <h2
                         style={{ textAlign: "center", marginBottom: "2rem" }}
                     >{this.state.slides[this.state.currentSlide].name}</h2>
                     <div>
-                        {this.state.slides[this.state.currentSlide].details.map((paragraph) => (<p>{paragraph}</p>))}
+                        {this.state.slides[this.state.currentSlide].details.map((paragraph, i) => (<p key="{this.state.currentSlide}-{i}">{paragraph}</p>))}
                     </div>
-                    <CtaButton to="/projects">See More Projects</CtaButton>
-                    <NavLink to="/projects">See More Projects</NavLink>
+                    <CtaButton width="100%" to="projects" icon="code">See More Projects</CtaButton>
                 </ContentBox>
             </Col>
         )

@@ -36,14 +36,18 @@ const PortfolioNavLink = styled(NavLink)`
 class Navigation extends Component {
 
     state = {
-        opacity: 0,
         navExpanded: false
     }
 
     componentDidMount() {
-        document.addEventListener('scroll', () => {
-            this.navOpacity();
-        })
+
+        this.navOpacity();
+
+        ['scroll', 'resize'].forEach(evt =>
+            window.addEventListener(evt, () => {
+                this.navOpacity();
+            })
+        )
     }
 
     navOpacity = () => {
@@ -54,6 +58,8 @@ class Navigation extends Component {
         let calc = ((scrollTop - offset + range) / range) - 1
         let opacity = null
 
+        // console.log(windowSize)
+
         if (calc < 0) {
             opacity = 0
         } else if (calc > 0.7) {
@@ -61,8 +67,11 @@ class Navigation extends Component {
         } else {
             opacity = calc
         }
-
-        this.setState({ opacity: opacity })
+        if (window.innerWidth > 991) {
+            this.setState({ opacity: opacity })
+        } else {
+            this.setState({ opacity: 1 })
+        }
     }
 
     toggleNavExpanded = () => {
@@ -72,6 +81,14 @@ class Navigation extends Component {
 
     closeNav = () => {
         this.setState({ navExpanded: false })
+    }
+
+    logoSize = () => {
+        if (window.innerWidth < 991 && window.innerHeight < 830) {
+            return "50px"
+        } else {
+            return "112px"
+        }
     }
 
     render() {
@@ -96,8 +113,8 @@ class Navigation extends Component {
                             <img
                                 src={Logo}
                                 alt="Geoff Peel Portfolio Logo"
-                                width="112px"
-                                height="112px"
+                                width={this.logoSize()}
+                                height={this.logoSize()}
                             />
                         </NavLink>
                     </Navbar.Brand>
@@ -106,8 +123,8 @@ class Navigation extends Component {
                         <Nav className="ml-auto">
                             <PortfolioNavLink to="/about" onClick={this.closeNav}>About</PortfolioNavLink>
                             <PortfolioNavLink to="/projects" onClick={this.closeNav}>Projects</PortfolioNavLink>
-                            <PortfolioNavLink to="/resume" disabled onClick={this.closeNav}>Resume</PortfolioNavLink>
-                            <PortfolioNavLink to="/blog" disabled onClick={this.closeNav}>Blog</PortfolioNavLink>
+                            <PortfolioNavLink to="/resume" onClick={this.closeNav}>Resume</PortfolioNavLink>
+                            <PortfolioNavLink to="/blog" onClick={this.closeNav}>Blog</PortfolioNavLink>
                             <PortfolioNavLink to="/contact" onClick={this.closeNav}>Contact</PortfolioNavLink>
                         </Nav>
                     </Navbar.Collapse>
