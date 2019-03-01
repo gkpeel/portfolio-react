@@ -29,7 +29,9 @@ class FeaturedProjectInfo extends Component {
                     >{this.state.slides[this.state.currentSlide].name}</h2>
                     <div>
                         {this.state.slides[this.state.currentSlide].details.map((paragraph, i) => (<p key="{this.state.currentSlide}-{i}">{paragraph}</p>))}
-                        <LinkDiv link={this.state.slides[this.state.currentSlide].link} repo={this.state.slides[this.state.currentSlide].repo} />
+                        <div className="w-75 mx-auto">
+                            <LinkDiv link={this.state.slides[this.state.currentSlide].link} repo={this.state.slides[this.state.currentSlide].repo} />
+                        </div>
                     </div>
                     <CtaButton width="100%" to="projects" icon="code">See More Projects</CtaButton>
                 </ContentBox>

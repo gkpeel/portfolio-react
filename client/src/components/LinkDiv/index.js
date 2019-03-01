@@ -4,11 +4,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const StyledDiv = styled.div`
     display: flex;
-    margin-top: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
     padding-left: 3rem;
     padding-right: 3rem;
     justify-content: space-around;
     align-content: center;
+
+    @media(min-width: 768px) {
+        margin-top: 3rem;
+    }
 `
 
 const LinkDiv = (props) => {

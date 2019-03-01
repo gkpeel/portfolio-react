@@ -4,6 +4,7 @@ import Section from "../../components/Section"
 import ContentHeader from "../../components/ContentHeader"
 import ContentBox from "../../components/ContentBox"
 import ContactForm from "../../components/ContactForm"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const Contact = () => {
     return (
@@ -38,6 +39,10 @@ const Contact = () => {
                                 <h4 className="text-center mb-4">Phone<br /><a href="tel:9088124012">908.812.4012</a></h4>
                             </Col>
                         </Row>
+                        <div className="mt-auto mx-auto w-75 d-flex justify-content-around">
+                            <a href="https://www.linkedin.com/in/geoffpeel/" className="d-block" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={['fab', 'linkedin']} size="3x" /></a>
+                            <a href="https://www.instagram.com/gkpeel/?hl=en" className="d-block" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={['fab', 'instagram']} size="3x" /></a>
+                        </div>
                     </ContentBox>
                 </Col>
             </Row>

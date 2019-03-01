@@ -17,6 +17,7 @@ const FormLabel = styled(Form.Label)`
 
 const FormControl = styled(Form.Control)`
     background-color: #222;
+    color: #FFFFFF;
 
     &:focus{
         background-color: #444;
@@ -84,22 +85,45 @@ const SendButton = styled(Button)`
 
 class ContactForm extends Component {
 
-    state = {}
+    state = {
+        name: null,
+        email: null,
+        message: null,
+    }
+
+    inputChange = (e) => {
+        const { name, value } = e.target;
+        this.setState({ [name]: value })
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('submitted')
+        this.clearState();
+    }
+
+    clearState = () => {
+        this.setState({
+            name: null,
+            email: null,
+            message: null
+        })
+    }
 
     render() {
         return (
-            <StyledForm>
+            <StyledForm onSubmit={this.handleSubmit}>
                 <FormGroup controlId="formName">
                     <FormLabel>Name</FormLabel>
-                    <FormName type="text" />
+                    <FormName name="name" value={this.state.name} onChange={this.inputChange} type="text" required />
                 </FormGroup>
                 <FormGroup controlId="formEmail">
                     <FormLabel>Email</FormLabel>
-                    <FormEmail type="email" />
+                    <FormEmail name="email" value={this.state.email} onChange={this.inputChange} type="email" required />
                 </FormGroup>
                 <Form.Group controlId="formText">
                     <FormLabel>Message</FormLabel>
-                    <FormText as="textarea" rows="8" />
+                    <FormText name="message" value={this.state.message} onChange={this.inputChange} as="textarea" rows="8" />
                 </Form.Group>
                 <SendButton type="submit">Send</SendButton>
             </StyledForm>

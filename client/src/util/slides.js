@@ -1,6 +1,6 @@
-import QuizMap from "../img/projects/quizmap-app.png"
-import GazellesCoaches from "../img/projects/gazelles-coaches-homepage-screenshot.png"
-import BegsList from "../img/projects/begs-list-screenshot.png"
+import QuizMap from "../img/projects/featured/quizmap-app.png"
+import GazellesCoaches from "../img/projects/featured/gazelles-coaches-homepage-screenshot.png"
+import BegsList from "../img/projects/featured/begs-list-screenshot.png"
 
 const Slides = [
     {

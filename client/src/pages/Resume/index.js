@@ -3,7 +3,8 @@ import { Row, Col, Button } from "react-bootstrap"
 import styled from "styled-components"
 import Section from "../../components/Section"
 import ContentHeader from "../../components/ContentHeader"
-import ResumePdf from "../../pdf/geoffreyPeel-resume-letter.pdf"
+import ResumePdfLetter from "../../pdf/geoffreyPeel-resume-letter.pdf"
+import ResumePdfLegal from "../../pdf/geoffreyPeel-resume-legal.pdf"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const DownloadButton = styled(Button)`
@@ -83,13 +84,13 @@ class Resume extends Component {
                         lg={{ span: "10", offset: "1", order: "2" }}
                         xl={{ span: "8", offset: "2" }}
                     >
-                        <embed src={ResumePdf} type="application/pdf" width="100%" height="793" />
+                        <embed src={ResumePdfLegal} type="application/pdf" width="100%" height="793" />
                     </Col>
                     <Col xs={{ span: "12", order: "2" }}
                         lg={{ span: "10", offset: "1", order: "3" }}
                         xl={{ span: "8", offset: "2" }}
                     >
-                        <DownloadButton href={ResumePdf} download>Download Resume <FontAwesomeIcon className="cta-icon" icon="file-download" /></DownloadButton>
+                        <DownloadButton href={ResumePdfLetter} download>Download Resume <FontAwesomeIcon className="cta-icon" icon="file-download" /></DownloadButton>
                     </Col>
                 </Row>
             </Section>
