@@ -31,8 +31,8 @@ const SkillsLogo = styled.img`
 
 const SkillsGrid = (props) => {
     return (
-        <Col md={{ span: 5, offset: 1 }} >
-            <ContentHeader>Skills</ContentHeader>
+        <Col md={{ span: 5, offset: 1 }}>
+            <ContentHeader paddingTop="3rem">Skills</ContentHeader>
             <SkillsRow>
                 <Col xs={12}>
                     <ContentSubHeader>MERN Stack</ContentSubHeader>

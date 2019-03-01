@@ -14,7 +14,7 @@ import "./App.css"
 
 // import FontAwesome Library/build Library
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faAngleDoubleRight, faCode, faEye, faUserCircle } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDoubleRight, faCode, faEye, faUserCircle, faFileDownload } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
 // import Navigation and Pages
@@ -28,7 +28,7 @@ import Contact from "./pages/Contact"
 import NoMatch from "./pages/NoMatch"
 import "./App.css"
 
-library.add(faAngleDoubleRight, faCode, fab, faEye, faUserCircle)
+library.add(faAngleDoubleRight, faCode, fab, faEye, faUserCircle, faFileDownload)
 
 const Page = styled.div`
   position: absolute;

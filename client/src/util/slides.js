@@ -13,8 +13,8 @@ const Slides = [
             ["Using Google’s Map API, I created full-stack application that asks users to enter the names of the world (or a continent’s) countries before time runs out. As they answer submit answers the Map API and GeoJSON data (on a MongoDB database) provides user’s with live feedback to their progress."],
             ["Check back for ongoing improvements including Redux implementation, enhanced map features to improve feedback, and user profile creation."]
         ],
-        link: "",
-        repo: ""
+        link: "https://quizmap.herokuapp.com/",
+        repo: "https://github.com/gkpeel/quiZMap-react"
     },
     {
         name: "Beg's List",
@@ -25,8 +25,8 @@ const Slides = [
             ["Built on NodeJS, this fictitious full-stack application leverages a MySQL database with Express routing and Handlebars views. User’s can create profiles, make “Beg’s” utilizing the Ebay API, and then UpVote/DownVote other requests depending on how “worthy” they view them."],
             ["This was a group project where everyone shared a portion of the workload. I personally tackled the database’s UpVote/DownVote logic as well as created the front-end design."]
         ],
-        link: "",
-        repo: ""
+        link: "https://stark-beach-71508.herokuapp.com/",
+        repo: "https://github.com/Anders-Engman/BegsList"
     },
     {
         name: "Gazelles Coaches",
@@ -37,8 +37,8 @@ const Slides = [
             ["This project leverages a number of custom post types, fields, and taxonomies that share relational data."],
             ["Additionally built a private “intranet” that coaches could log in to, in order to find relevant internal documents."]
         ],
-        link: "",
-        repo: ""
+        link: "https://coaches.scalingup.com/",
+        repo: null
     }
 ]
 

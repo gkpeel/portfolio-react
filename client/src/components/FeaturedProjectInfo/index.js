@@ -3,6 +3,9 @@ import { Col } from "react-bootstrap"
 import Slides from "../../util/slides.js"
 import ContentBox from "../ContentBox"
 import CtaButton from "../CtaButton"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import LinkDiv from "../LinkDiv/index.js";
+
 
 class FeaturedProjectInfo extends Component {
     state = {
@@ -26,6 +29,7 @@ class FeaturedProjectInfo extends Component {
                     >{this.state.slides[this.state.currentSlide].name}</h2>
                     <div>
                         {this.state.slides[this.state.currentSlide].details.map((paragraph, i) => (<p key="{this.state.currentSlide}-{i}">{paragraph}</p>))}
+                        <LinkDiv link={this.state.slides[this.state.currentSlide].link} repo={this.state.slides[this.state.currentSlide].repo} />
                     </div>
                     <CtaButton width="100%" to="projects" icon="code">See More Projects</CtaButton>
                 </ContentBox>
